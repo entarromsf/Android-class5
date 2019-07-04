@@ -32,12 +32,13 @@ public interface IMiniDouyinService {
     //    .com/obj/developer-baas/baas/tt7217xbo2wz3cem41/a8efa55c5c22de69_1560563154288.mp4",
     //    "success": true
     //}
+    @Multipart
     @POST("/mini_douyin/invoke/video")
     Call<PostVideoResponse> createVideo(
             @Query("student_id") String student_id,
             @Query("user_name") String user_name,
-            @Part MultipartBody.Part file1,
-            @Part MultipartBody.Part file2
+            @Part MultipartBody.Part cover_image,
+            @Part MultipartBody.Part video
     );
 
 
